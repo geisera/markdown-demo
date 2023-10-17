@@ -1,0 +1,62 @@
+import { Libraries } from '@/components/Libraries'
+
+export const metadata = {
+  title: 'More Syntax',
+  description:
+    'Markdown offers fine-tuned JavaScript, Ruby, PHP, Python, and Go libraries to make your life easier and give you the best experience when consuming the API.',
+}
+
+# More Syntax
+
+Let's look at a bit more commonly used Markdown.
+
+## Tables
+
+To add a table, use three or more hyphens `---` to create each column’s header, and use pipes `|` to separate each column. For compatibility, you should also add a pipe on either end of the row.
+
+|  Heading    |  Another Heading  |<br></br>
+|   :---    | :---: |<br></br>
+|  Some value  | Another value |
+
+**The rendered output looks like this:**
+|  Heading    |  Another Heading  |
+|   :---    | :--- |
+|  Some value  | Another value |
+
+## Escaping Pipe Characters in Tables
+
+You can display a pipe `|` character in a table by using its HTML character code `&#124;`.
+
+**The rendered output looks like this:** &#124;
+
+## Strikethrough
+
+You can strikethrough words by putting a horizontal line through the center of them. The result looks like this. This feature allows you to indicate that certain words are a mistake not meant for inclusion in the document. To strikethrough words, use two tilde symbols (~~) before and after the words.
+
+\~~The world is flat.~~ We now know that the world is round.
+
+**The rendered output looks like this:**
+
+~~The world is flat.~~ We now know that the world is round.;
+
+## Task Lists
+
+Task lists (also referred to as checklists and todo lists) allow you to create a list of items with checkboxes. In Markdown applications that support task lists, checkboxes will be displayed next to the content. To create a task list, add dashes `-` and brackets with a space `[ ]` in front of task list items. To select a checkbox, add an x in between the brackets `[x]`.
+
+\- [x] Write the press release<br></br>
+\- [ ] Update the website<br></br>
+\- [ ] Contact the media
+
+**The rendered output looks like this:**
+- [x] Write the press release
+- [ ] Update the website
+- [ ] Contact the media
+
+## Automatic URL Linking
+
+Many Markdown processors automatically turn URLs into links. That means if you type `http://www.example.com`, your Markdown processor will automatically turn it into a link even though you haven’t used brackets.
+
+**The rendered output looks like this:**
+
+http://www.example.com
+

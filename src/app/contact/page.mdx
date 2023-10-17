@@ -1,0 +1,75 @@
+
+import { Contacts } from '@/components/ContactCard'
+
+export const metadata = {
+  title: 'Contacts',
+  description:
+    'How to get in touch with Tony Geiser.',
+}
+
+# Thank you for your interest
+
+### My name is **Tony Geiser**. I love all things web development and am constantly finding new features to love in **Technical Writing and Documentation**, HTML, Javascript, CSS, Markdown, React, Vue, OpenAI. *All the things*. 
+
+### I'm currently working as a Salesforce Platform Developer consultant. And, I do some tech writing on the side. If I can help you with anything. Get in touch.
+---
+
+<CodeGroup title="Request" tag="GET" label="/v1/contacts">
+
+    ```bash {{ title: 'Skills' }}
+    curl -G https://api.Markdown.chat/v1/get-skills \
+      - WEB: Javascript, HTML, CSS, Markdown
+      - FRAMEWORKS: React, Vue, MERN 
+      - SALESFORCE: Apex, LWC, CPQ
+    ```
+
+    ```js {{ title: 'Certifications' }}
+    Salesforce Certified Platform Developer I
+    Salesforce Certified CPQ Specialist
+    Salesforce Certified Administrator
+    ```
+
+    ```python {{ title: 'Education' }}
+    Bachelors Degree in Communications from Univeristy of Memphis
+    Associate of Applied Science in Aviaton Maintenance Technology from Arkansas State University
+    ```
+
+    ```php {{ title: 'Experience' }}
+    Salesforce Consultant | December 2022 - Present
+
+    I was privileged to be part of a team working to undo a botched CPQ roll-out in a complex, telecom enterprise environment. Together we were able to restore sane product catalog, pricing, quoting, MACD and order practices and helped our client realize an ROI on their Salesforce investment. And many other projects.
+
+    Director of Aircraft Maintenance | 2014 – 2022| CTI Professional Flight Training, Millington, TN
+- I ensured aircraft were maintained in a safe and regulatory compliant manner through attention to detail, knowledge of Federal Aviation Administration regulations, and my own integrity.
+- As a Technical Writer I wrote and maintained our Quality and Maintenance Manuals used as a practical tool for maintenance personnel and legally compliant to FAA inspectors.
+- These manuals require rigorous research and preparation in order to pass federal inspection and constant monitoring for quality, accuracy, and usefulness for the intended audience.
+    ```
+
+    </CodeGroup>
+
+## Skills
+|Web|Frameworks|Salesforce|
+| --- | --- | --- |
+|HTML|React/Next.js|Salesforce|
+|Javascript|Vue|Lightning Web Components|
+|CSS|Markdown|CPQ|
+|Markdown|MERN Stack|Apex|
+## Certifications
+- Salesforce Certified Platform Developer I
+- Salesforce Certified CPQ Specialist
+- Salesforce Certified Administrator
+## Education
+- Bachelor's in Communications from the University of Memphis
+- Associate of Applied Science - Aviation Maintenance Technology - Arkansas State University
+
+## Experience
+**Salesforce Consultant | December 2022 - Present**
+- I was privileged to be part of a team working to undo a botched CPQ roll-out in a complex, telecom enterprise environment. Together we were able to restore sane product catalog, pricing, quoting, MACD and order practices and helped our client realize an ROI on their Salesforce investment. ***And many other projects.***
+
+**Director of Aircraft Maintenance | 2014 – 2022| CTI Professional Flight Training, Millington, TN**
+- I ensured aircraft were maintained in a safe and regulatory compliant manner through attention to detail, knowledge of Federal Aviation Administration regulations, and my own integrity.
+- As a **Technical Writer** I wrote and maintained our Quality and Maintenance Manuals used as a practical tool for maintenance personnel and legally compliant to FAA inspectors.
+These manuals require rigorous research and preparation in order to pass federal inspection and constant monitoring for quality, accuracy, and usefulness for the intended audience.
+
+
+<Contacts />

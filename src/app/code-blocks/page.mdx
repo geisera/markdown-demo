@@ -1,0 +1,160 @@
+export const metadata = {
+  title: 'Code Syntax Highlighting',
+  description:
+    'In this guide, we’ll look at how authentication works. Markdown offers two ways to authenticate your API requests: Basic authentication and OAuth2 with a token.',
+}
+
+# Code Blocks and Syntax highlighting
+
+This guide explores how to apply syntax highlighting to code blocks. MDX supports standard markdown syntax (CommonMark). It does not apply syntax highlighting to code blocks by default.
+
+There are two ways to accomplish syntax highlighting: at compile time or at runtime. Doing it at compile time means the effort is spent upfront so that readers will have a fast experience as no extra code is sent to them (***syntax highlighting needs a lot of code to work***). Doing it at runtime gives more flexibility by moving the work to the client. This can result in a slow experience for readers though. It also depends on what framework you use (as in it’s specific to React, Preact, Vue, etc.) {{ className: 'lead' }}
+
+## Basic code blocks
+
+You can render basic code blocks by placing them between three tick marks as below.
+
+\```
+\
+bash {{ title: 'An example code block' }}
+curl https://someapi.com/v1/endpoint \
+  -u username:password
+\
+\```
+
+**The rendered output looks like this:**
+
+```bash {{ title: 'An example code block' }}
+curl https://someapi.com/v1/endpoint \
+  -u username:password
+```
+## More blocks with mock code and documentation:
+
+<Row>
+  <Col>
+
+    In this example, we request the page that starts after the conversation with id `s4WycXedwhQrEFuM`. As a result, we get a list of three conversations and can tell by the `has_more` attribute that we have reached the end of the resultset.
+
+    <Properties>
+      <Property name="starting_after" type="string">
+        The last ID on the page you're currently on when you want to fetch the next page.
+      </Property>
+      <Property name="ending_before" type="string">
+        The first ID on the page you're currently on when you want to fetch the previous page.
+      </Property>
+      <Property name="limit" type="integer">
+        Limit the number of items returned.
+      </Property>
+    </Properties>
+
+  </Col>
+  <Col>
+
+    ```bash {{ title: 'Manual pagination using cURL' }}
+    curl -G https://api.Markdown.chat/v1/conversations \
+      -H "Authorization: Bearer {token}" \
+      -d starting_after="s4WycXedwhQrEFuM" \
+      -d limit=10
+    ```
+
+    ```json {{ title: 'Paginated response' }}
+    {
+      "has_more": false,
+      "data": [
+        {
+          "id": "WAz8eIbvDR60rouK",
+          // ...
+        },
+        {
+          "id": "hSIhXBhNe8X1d8Et"
+          // ...
+        },
+        {
+          "id": "fbwYwpi9C2ybt6Yb"
+          // ...
+        }
+      ]
+    }
+    ```
+
+  </Col>
+</Row>
+
+## Complex code blocks with multiple code samples in each
+
+
+<Row>
+  <Col>
+
+    This endpoint allows you to retrieve a paginated list of all your contacts. By default, a maximum of ten contacts are shown per page.
+
+    ### One more, for good measure
+
+    <Properties>
+      <Property name="limit" type="integer">
+        Limit the number of contacts returned.
+      </Property>
+    </Properties>
+
+  </Col>
+  <Col sticky>
+
+    <CodeGroup title="Request" tag="GET" label="/v1/contacts">
+
+    ```bash {{ title: 'cURL' }}
+    curl -G https://api.Markdown.chat/v1/contacts \
+      -H "Authorization: Bearer {token}" \
+      -d active=true \
+      -d limit=10
+    ```
+
+    ```js
+    import ApiClient from '@example/Markdown-api'
+
+    const client = new ApiClient(token)
+
+    await client.contacts.list()
+    ```
+
+    ```python
+    from Markdown_api import ApiClient
+
+    client = ApiClient(token)
+
+    client.contacts.list()
+    ```
+
+    ```php
+    $client = new \Markdown\ApiClient($token);
+
+    $client->contacts->list();
+    ```
+
+    </CodeGroup>
+
+    ```json {{ title: 'Response' }}
+    {
+      "has_more": false,
+      "data": [
+        {
+          "id": "WAz8eIbvDR60rouK",
+          "username": "FrankMcCallister",
+          "phone_number": "1-800-759-3000",
+          "avatar_url": "https://assets.Markdown.chat/avatars/frank.jpg",
+          "display_name": null,
+          "conversation_id": "xgQQXg3hrtjh7AvZ",
+          "last_active_at": 705103200,
+          "created_at": 692233200
+        },
+        {
+          "id": "hSIhXBhNe8X1d8Et"
+          // ...
+        }
+      ]
+    }
+    ```
+
+  </Col>
+</Row>
+
+---
